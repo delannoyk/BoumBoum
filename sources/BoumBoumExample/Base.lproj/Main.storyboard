@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10089" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10072.1"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BoumBoumExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OB1-Y4-Pp4">
+                                <rect key="frame" x="160" y="30" width="280" height="280"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart" translatesAutoresizingMaskIntoConstraints="NO" id="g2Q-1J-SXH">
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="280"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="g2Q-1J-SXH" secondAttribute="trailing" id="2Kc-hy-LCV"/>
+                                    <constraint firstAttribute="bottom" secondItem="g2Q-1J-SXH" secondAttribute="bottom" id="8SD-B9-KUR"/>
+                                    <constraint firstAttribute="height" constant="280" id="M1Q-fy-kfR"/>
+                                    <constraint firstItem="g2Q-1J-SXH" firstAttribute="top" secondItem="OB1-Y4-Pp4" secondAttribute="top" id="Q8Z-il-JIz"/>
+                                    <constraint firstItem="g2Q-1J-SXH" firstAttribute="leading" secondItem="OB1-Y4-Pp4" secondAttribute="leading" id="UIz-4A-Jaa"/>
+                                    <constraint firstAttribute="width" constant="280" id="xsQ-LK-Mbb"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R5e-7x-0Og">
+                                <rect key="frame" x="400" y="30" width="40" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rHx-gu-pw2">
+                                <rect key="frame" x="160" y="510" width="280" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Start Monitoring">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonStartPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZfH-GD-btY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rHx-gu-pw2" secondAttribute="bottom" constant="60" id="2DT-x8-3t0"/>
+                            <constraint firstItem="OB1-Y4-Pp4" firstAttribute="trailing" secondItem="R5e-7x-0Og" secondAttribute="trailing" id="AAO-UU-3A3"/>
+                            <constraint firstItem="R5e-7x-0Og" firstAttribute="top" secondItem="OB1-Y4-Pp4" secondAttribute="top" id="OHJ-d2-QXZ"/>
+                            <constraint firstItem="OB1-Y4-Pp4" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="PQK-Jj-lza"/>
+                            <constraint firstItem="rHx-gu-pw2" firstAttribute="trailing" secondItem="OB1-Y4-Pp4" secondAttribute="trailing" id="Q4L-nZ-4mt"/>
+                            <constraint firstItem="rHx-gu-pw2" firstAttribute="leading" secondItem="OB1-Y4-Pp4" secondAttribute="leading" id="hKI-lp-c4b"/>
+                            <constraint firstItem="OB1-Y4-Pp4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="waE-PY-klw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageViewHeart" destination="g2Q-1J-SXH" id="jbg-Hu-ShP"/>
+                        <outlet property="labelPulseRate" destination="R5e-7x-0Og" id="4NN-it-Nmb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="375" y="314"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="heart" width="300" height="300"/>
+    </resources>
+</document>
