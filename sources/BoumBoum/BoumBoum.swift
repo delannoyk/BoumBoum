@@ -12,6 +12,7 @@ import AVFoundation
 public enum BoumBoumError: ErrorType {
     case AlreadyRunning
     case AlreadyStopped
+    case CameraUnavailable
     case TorchModeUnsupported
     case CameraLockFailed(NSError)
     case CameraDeviceInputCreationFailed(NSError)
@@ -28,7 +29,7 @@ public class BoumBoum: NSObject {
     }
 
     public let session: AVCaptureSession
-    public let camera: AVCaptureDevice
+    public let camera: AVCaptureDevice?
     public weak var delegate: BoumBoumDelegate?
 
     public private(set) var state = State.Stopped
@@ -51,6 +52,12 @@ public class BoumBoum: NSObject {
         super.init()
     }
 
+    private init(session: AVCaptureSession, camera: AVCaptureDevice?) {
+        self.session = session
+        self.camera = camera
+        super.init()
+    }
+
     ////////////////////////////////////////////////////////////////////////////
 
 
@@ -58,6 +65,11 @@ public class BoumBoum: NSObject {
     ////////////////////////////////////////////////////////////////////////////
 
     public func startMonitoring() throws {
+        //Ensuring we have a camera
+        guard let camera = camera else {
+            throw BoumBoumError.CameraUnavailable
+        }
+
         //Ensuring we're stopped
         guard state == .Stopped else {
             throw BoumBoumError.AlreadyRunning
@@ -105,6 +117,11 @@ public class BoumBoum: NSObject {
     }
 
     public func stopMonitoring() throws {
+        //Ensuring we have a camera
+        guard let camera = camera else {
+            throw BoumBoumError.CameraUnavailable
+        }
+
         //Ensuring we're running
         guard state == .Running else {
             throw BoumBoumError.AlreadyStopped
@@ -151,7 +168,6 @@ public class BoumBoum: NSObject {
         videoOutput.videoSettings = [
             kCVPixelBufferPixelFormatTypeKey: NSNumber(unsignedInt: kCVPixelFormatType_32BGRA)
         ]
-        //TODO: videoOutput.minFrameDuration = CMTimeMake(1, 10);
         return videoOutput
     }
 
