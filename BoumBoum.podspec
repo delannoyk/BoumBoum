@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'BoumBoum'
-  s.version      = '0.1'
+  s.version      = '0.1.1'
   s.license      =  { :type => 'MIT' }
   s.homepage     = 'https://github.com/delannoyk/BoumBoum'
   s.authors      = {
