@@ -1,4 +1,9 @@
 # BoumBoum
+[![Build Status](https://travis-ci.org/delannoyk/BoumBoum.svg)](https://travis-ci.org/delannoyk/BoumBoum)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+![Cocoapods Compatible](https://img.shields.io/cocoapods/v/BoumBoum.svg)
+![Platform iOS](https://img.shields.io/badge/platform-iOS-lightgrey.svg)
+[![Contact](https://img.shields.io/badge/contact-%40kdelannoy-blue.svg)](https://twitter.com/kdelannoy)
 
 # Credits
 
