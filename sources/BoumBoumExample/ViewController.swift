@@ -38,8 +38,7 @@ class ViewController: UIViewController, BoumBoumDelegate {
                 try boum.startMonitoring()
                 sender.setTitle("Stop Monitoring", forState: .Normal)
                 imageViewHeart?.layer.addAnimation(animation, forKey: "heart")
-            } catch let error {
-
+            } catch {
             }
         }
         else {
@@ -47,8 +46,7 @@ class ViewController: UIViewController, BoumBoumDelegate {
                 try boum.stopMonitoring()
                 sender.setTitle("Start Monitoring", forState: .Normal)
                 imageViewHeart?.layer.removeAnimationForKey("heart")
-            } catch let error {
-
+            } catch {
             }
         }
     }
