@@ -22,3 +22,6 @@ script:
 
   # Build Framework in Debug and Run Tests if specified
   - xcodebuild -project "$PROJECT" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO build | xcpretty -c;
+notifications:
+  slack:
+    secure: dzSR/YyQGwbJnSu9DbBpKpjxV0LDIF9aRYy7H0XZyl3XuREu+QVrEVPw8e9X7nFnGWGaWx0u10TGrC/iHzyvSFlcrk/ZVhnDGsx8H9HRzpQL709xiNrAgQS/Jwg1L4K3QJauzbJ0VvPcKHEWW3zdgF3DG9FxLYyy04OKJdJd4xu6HwfwJFrX5GLTXRgRpu58r33QGx/yC1bf4nve6DLZkzMMH36ceWTGTjiYabAaIexk94Q/83v51oR+W9wJjLfa2uZbo2P1EBmIz+JH1S0yIOmQ64l4gcQaxSQL9KZNNJXK9SbcfLOy7X4WBRHQSsA4oHAhK4jcR/q0yctBnZHucYByjzMf73lgQFl6fVYnowAshOlD0l7KKa9buaJ5eIgHVFOqoqeITT8PhZoEeZp704mcz48ZrY4BhqI9PCbfHlPgSwqbHTmXUFKHmsYUtXi+OxNcZAtzpr2MNiDAguPxgZxS/lV6cRk6oEkKqsPeUuYZEL2hxzCfjGc+f46L5AuWrK9PtpdeKdaDALvGhU/y1c4RDwuvUSegLVD2NJqKijs4QT7FoCYbXeg1dIz3PInEzIUA9IbJkFglIA/1MB89wzQhoF4BE6sz+n5b/r6TxoddvYDX1kqIjhjujBftlrW3Jumb8v3o5EbgWXiS2KURESZ4dlSt7bKH1BxQKSaOlt4=
